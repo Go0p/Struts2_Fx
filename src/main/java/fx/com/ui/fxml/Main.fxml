@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane prefHeight="600.0" prefWidth="800.0" stylesheets="@css/Maincss.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fx.com.ui.Controller.MainController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="193.03829956054688" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="539.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="511.97137451171875" minHeight="0.0" prefHeight="505.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="107.038330078125" minHeight="10.0" prefHeight="18.8228759765625" vgrow="SOMETIMES" />
+    </rowConstraints>
+   <children>
+       <TabPane tabClosingPolicy="UNAVAILABLE" GridPane.rowIndex="2">
+          <tabs>
+              <Tab style="-fx-background-color: #a5c8a5;" text="漏洞测试">
+                 <content>
+                     <fx:include fx:id="vulTestView" source="VulTestViewTab.fxml" />
+                 </content>
+              </Tab>
+              <Tab text="批量测试">
+                  <content>
+                      <fx:include fx:id="fileVulCheck" source="fileVulCheckViewTab.fxml" />
+                  </content>
+              </Tab>
+              <Tab text="命令执行">
+                 <content>
+                     <fx:include fx:id="execView" source="execViewViewTab.fxml" />
+                 </content>
+              </Tab>
+              <Tab text="文件上传">
+                 <content>
+                     <fx:include fx:id="fileUpload" source="fileUploadViewTab.fxml" />
+                 </content>
+              </Tab>
+              <Tab text="待用">
+                 <content>
+                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                 </content>
+              </Tab>
+              <Tab fx:id="settingField" text="设置">
+                 <content>
+                     <fx:include fx:id="setting" source="Setting.fxml" />
+                 </content>
+              </Tab>
+          </tabs>
+       </TabPane>
+       <GridPane alignment="CENTER">
+           <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.4385528564453" minWidth="0.0" prefWidth="35.96391677856445" />
+               <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="290.0" minWidth="0.0" prefWidth="70.03608322143555" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="659.8299713134766" minWidth="0.0" prefWidth="650.2526016235352" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="718.565788269043" minWidth="10.0" prefWidth="42.943115234375" />
+           </columnConstraints>
+           <rowConstraints>
+               <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+           </rowConstraints>
+          <children>
+              <TextField fx:id="targetField" prefHeight="27.0" prefWidth="533.0" promptText="请输入url" GridPane.columnIndex="2" />
+              <Label GridPane.columnIndex="3" />
+              <Label />
+              <Label prefHeight="17.0" prefWidth="71.0" text="目标网址:" GridPane.columnIndex="1" />
+          </children>
+       </GridPane>
+       <GridPane alignment="CENTER" GridPane.rowIndex="1">
+           <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.85565948486328" minWidth="10.0" prefWidth="35.54128837585449" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.60857486724854" minWidth="10.0" prefWidth="58.422630310058594" />
+               <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="248.76331329345703" minWidth="10.0" prefWidth="114.5773696899414" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.87158203125" minWidth="0.9070358276367188" prefWidth="68.38653564453125" />
+               <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="272.7737121582031" minWidth="10.0" prefWidth="94.79388427734375" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="272.7737121582031" minWidth="10.0" prefWidth="103.08255004882812" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="272.7737121582031" minWidth="10.0" prefWidth="104.91744995117188" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="280.0985412597656" minWidth="10.0" prefWidth="67.94305419921875" />
+               <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="298.8202209472656" minWidth="10.0" prefWidth="104.943115234375" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="298.8202209472656" minWidth="10.0" prefWidth="52.01531982421875" />
+           </columnConstraints>
+           <rowConstraints>
+               <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+           </rowConstraints>
+          <children>
+              <Label text="字符集:" GridPane.columnIndex="1" />
+              <Label text="提交方式:" GridPane.columnIndex="3" />
+              <Label text="漏洞编号:" GridPane.columnIndex="7" />
+            <ChoiceBox fx:id="setEncodeField" prefHeight="27.0" prefWidth="95.0" GridPane.columnIndex="2" />
+            <ChoiceBox fx:id="methodField" prefHeight="20.0" prefWidth="75.0" GridPane.columnIndex="4" />
+            <ChoiceBox fx:id="s2_allField" prefHeight="20.0" prefWidth="90.0" GridPane.columnIndex="8" />
+          </children>
+       </GridPane>
+       <GridPane GridPane.rowIndex="3">
+           <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+           </columnConstraints>
+           <rowConstraints>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+           </rowConstraints>
+          <children>
+              <Label />
+              <HBox alignment="CENTER_RIGHT" prefWidth="20.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
+                 <children>
+                     <Separator orientation="VERTICAL" prefHeight="20.0" />
+                     <Label text="纯JavaFX练手" />
+                     <Separator orientation="VERTICAL" prefHeight="20.0" />
+                     <Label text="By go0p" />
+                 </children>
+              </HBox>
+          </children>
+       </GridPane>
+   </children>
+</GridPane>
